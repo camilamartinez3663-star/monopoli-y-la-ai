@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto IA Edu - Equipo Monopoli</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Estilos para manejar las pestañas */
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 font-sans">
+
+    <!-- Navegación -->
+    <nav class="sticky top-0 z-50 bg-slate-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="brain-circuit" class="h-8 w-8 text-indigo-400"></i>
+                    <span class="font-bold text-xl tracking-tight">Proyecto IA Edu</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="flex items-baseline space-x-4" id="nav-buttons">
+                        <button onclick="switchTab('inicio')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium transition-colors bg-indigo-600 text-white" data-target="inicio">Inicio</button>
+                        <button onclick="switchTab('problema')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium transition-colors text-slate-300 hover:bg-slate-700 hover:text-white" data-target="problema">El Problema</button>
+                        <button onclick="switchTab('solucion')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium transition-colors text-slate-300 hover:bg-slate-700 hover:text-white" data-target="solucion">Nuestra Solución</button>
+                        <button onclick="switchTab('equipo')" class="nav-btn px-3 py-2 rounded-md text-sm font-medium transition-colors text-slate-300 hover:bg-slate-700 hover:text-white" data-target="equipo">Equipo Monopoli</button>
+                    </div>
+                </div>
+                <!-- Menú móvil (simplificado) -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Área de Contenido Principal -->
+    <main class="w-full">
+        
+        <!-- SECCIÓN: INICIO -->
+        <section id="inicio" class="tab-panel active">
+            <div class="relative bg-slate-900 text-white overflow-hidden">
+                <div class="absolute inset-0">
+                    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 opacity-90"></div>
+                </div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+                    <div class="text-center md:text-left md:w-2/3">
+                        <span class="uppercase tracking-wider text-indigo-400 font-semibold text-sm">Problema Contemporáneo</span>
+                        <h1 class="mt-3 text-4xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
+                            La Dependencia a la <span class="text-indigo-400">Inteligencia Artificial</span>
+                        </h1>
+                        <p class="mt-6 text-xl text-slate-300 max-w-3xl">
+                            En la última década, la llegada de la IA generativa no solo ha digitalizado las clases, sino que ha cambiado la forma en que los estudiantes de preparatoria y universidad piensan y aprenden. Lo que inició como un copiloto, hoy es una dependencia cognitiva.
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <button onclick="switchTab('problema')" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg transition-colors shadow-lg shadow-indigo-500/30">
+                                Conoce los Riesgos
+                            </button>
+                            <button onclick="switchTab('solucion')" class="px-8 py-3 border border-slate-600 text-base font-medium rounded-md text-white hover:bg-slate-800 md:py-4 md:text-lg transition-colors">
+                                Nuestra Propuesta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: EL PROBLEMA -->
+        <section id="problema" class="tab-panel">
+            <div class="py-16 bg-slate-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Contexto y Causas</h2>
+                        <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                            ¿Una herramienta o una muleta cognitiva?
+                        </p>
+                        <p class="mt-4 text-xl text-slate-500 mx-auto">
+                            A diario, usamos la IA para tareas básicas porque nos gusta que nos faciliten la vida. Pero esto está afectando nuestro desarrollo intelectual. <strong class="text-indigo-600">Haz clic en cada tarjeta para conocer el impacto real:</strong>
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Tarjeta 1 -->
+                        <div onclick="toggleAccordion(this)" class="accordion-item bg-white rounded-xl shadow-sm border border-slate-200 p-8 transition-all duration-300 cursor-pointer hover:shadow-md">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="p-3 rounded-lg bg-slate-50 border border-slate-100 mr-4">
+                                        <i data-lucide="trending-down" class="h-8 w-8 text-rose-500"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900">Disminución de Autonomía</h3>
+                                </div>
+                                <i data-lucide="chevron-right" class="chevron h-6 w-6 text-slate-400 transition-transform duration-300"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                Los estudiantes reducen su capacidad para aprender por sí mismos, confiando en que la IA resolverá las tareas sin esfuerzo.
+                            </p>
+                            <div class="accordion-content overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+                                <div class="flex items-start mt-6 pt-6 border-t border-slate-100">
+                                    <i data-lucide="brain-circuit" class="h-5 w-5 text-indigo-500 mr-2 flex-shrink-0 mt-0.5"></i>
+                                    <p class="text-sm font-medium text-slate-700 leading-relaxed">
+                                        El uso excesivo de herramientas de IA para completar tareas académicas interrumpe el proceso natural de asimilación. Al no esforzarse por buscar soluciones, los alumnos se vuelven dependientes de la inmediatez, perdiendo la resiliencia académica y la capacidad fundamental de aprender por cuenta propia en escenarios sin tecnología.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 2 -->
+                        <div onclick="toggleAccordion(this)" class="accordion-item bg-white rounded-xl shadow-sm border border-slate-200 p-8 transition-all duration-300 cursor-pointer hover:shadow-md">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="p-3 rounded-lg bg-slate-50 border border-slate-100 mr-4">
+                                        <i data-lucide="alert-triangle" class="h-8 w-8 text-amber-500"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900">Pérdida de Pensamiento Crítico</h3>
+                                </div>
+                                <i data-lucide="chevron-right" class="chevron h-6 w-6 text-slate-400 transition-transform duration-300"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                El uso excesivo debilita la memoria y la capacidad para cuestionar, analizar y resolver problemas de manera independiente.
+                            </p>
+                            <div class="accordion-content overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+                                <div class="flex items-start mt-6 pt-6 border-t border-slate-100">
+                                    <i data-lucide="brain-circuit" class="h-5 w-5 text-indigo-500 mr-2 flex-shrink-0 mt-0.5"></i>
+                                    <p class="text-sm font-medium text-slate-700 leading-relaxed">
+                                        Nos estamos acostumbrando a aceptar los primeros resultados como verdades absolutas. Esto genera que nuestro cerebro reduzca su actividad en áreas de razonamiento lógico. Cuando delegamos el análisis a la máquina, perdemos la capacidad humana de juzgar qué es correcto, qué es lógico y qué carece de sentido.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 3 -->
+                        <div onclick="toggleAccordion(this)" class="accordion-item bg-white rounded-xl shadow-sm border border-slate-200 p-8 transition-all duration-300 cursor-pointer hover:shadow-md">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="p-3 rounded-lg bg-slate-50 border border-slate-100 mr-4">
+                                        <i data-lucide="book-open" class="h-8 w-8 text-orange-500"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900">Deterioro en la Investigación</h3>
+                                </div>
+                                <i data-lucide="chevron-right" class="chevron h-6 w-6 text-slate-400 transition-transform duration-300"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                Ocho de cada 100 universitarios tienen un apego 'alto' a la tecnología, perdiendo la habilidad de buscar y contrastar fuentes confiables.
+                            </p>
+                            <div class="accordion-content overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+                                <div class="flex items-start mt-6 pt-6 border-t border-slate-100">
+                                    <i data-lucide="brain-circuit" class="h-5 w-5 text-indigo-500 mr-2 flex-shrink-0 mt-0.5"></i>
+                                    <p class="text-sm font-medium text-slate-700 leading-relaxed">
+                                        Anteriormente, la investigación implicaba leer diferentes perspectivas y sacar una conclusión. Hoy en día, la facilidad de un solo clic nos está robando las habilidades de lectura crítica. Los estudiantes ya no verifican si la información generada es real o si sufre de 'alucinaciones' algorítmicas, limitando el descubrimiento activo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tarjeta 4 -->
+                        <div onclick="toggleAccordion(this)" class="accordion-item bg-white rounded-xl shadow-sm border border-slate-200 p-8 transition-all duration-300 cursor-pointer hover:shadow-md">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <div class="p-3 rounded-lg bg-slate-50 border border-slate-100 mr-4">
+                                        <i data-lucide="users" class="h-8 w-8 text-slate-500"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900">Desventaja Laboral y Académica</h3>
+                                </div>
+                                <i data-lucide="chevron-right" class="chevron h-6 w-6 text-slate-400 transition-transform duration-300"></i>
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                Deterioro de la calidad educativa, predicción negativa del rendimiento académico y estudiantes con habilidades limitadas para un futuro cambiante.
+                            </p>
+                            <div class="accordion-content overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+                                <div class="flex items-start mt-6 pt-6 border-t border-slate-100">
+                                    <i data-lucide="brain-circuit" class="h-5 w-5 text-indigo-500 mr-2 flex-shrink-0 mt-0.5"></i>
+                                    <p class="text-sm font-medium text-slate-700 leading-relaxed">
+                                        Si a lo largo de su carrera el estudiante solo fungió como 'copista' de la IA, al egresar no estará preparado para resolver problemas complejos reales. Esta dependencia cognitiva predice un deterioro en la calidad educativa y representará una fuerte desventaja competitiva en un mercado laboral que exige verdaderos solucionadores de problemas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 bg-slate-900 rounded-2xl p-8 md:p-12 text-center shadow-xl">
+                        <h3 class="text-2xl font-bold text-white mb-4">¿Por qué es importante actuar hoy?</h3>
+                        <p class="text-slate-300 max-w-4xl mx-auto text-lg">
+                            Es crucial abordar este problema para evitar consecuencias negativas irreversibles en la formación académica. Necesitamos estudiantes autosuficientes que comprendan la lógica detrás de las respuestas, no simples transcriptores de resultados generados por algoritmos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: NUESTRA SOLUCIÓN -->
+        <section id="solucion" class="tab-panel">
+            <div class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row items-center gap-12 mb-16">
+                        <div class="lg:w-1/2">
+                            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Innovación Tecnológica</h2>
+                            <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl mb-6">
+                                Andamiaje Cognitivo con IA
+                            </p>
+                            <div class="space-y-6 text-lg text-slate-600">
+                                <p>
+                                    En lugar de prohibir la tecnología, proponemos un sistema de <strong>prompts estratégicos</strong> diseñados para fomentar el pensamiento crítico, la reflexión profunda y el esfuerzo cognitivo progresivo.
+                                </p>
+                                <p>
+                                    Nuestra plataforma no proporciona respuestas directas que sustituyan el proceso mental. Actúa como un guía socrático que hace preguntas para invitar al alumno a analizar, comparar, argumentar y justificar sus ideas, construyendo el conocimiento paso a paso.
+                                </p>
+                                <ul class="space-y-4 mt-6">
+                                    <li class="flex items-start">
+                                        <i data-lucide="shield-check" class="h-6 w-6 text-green-500 mr-3 flex-shrink-0"></i>
+                                        <span><strong>Herramienta de apoyo, no reemplazo:</strong> Promueve una relación humano-tecnología saludable, facilitando el aprendizaje sin sustituir el razonamiento.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i data-lucide="shield-check" class="h-6 w-6 text-green-500 mr-3 flex-shrink-0"></i>
+                                        <span><strong>Autoevaluación:</strong> Indicadores integrados para que el estudiante reflexione sobre cuánto comprendió realmente del tema antes y después de usar la herramienta.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:w-1/2 w-full">
+                            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200 shadow-inner">
+                                <h4 class="font-bold text-slate-900 mb-6 text-xl flex items-center">
+                                    <i data-lucide="lightbulb" class="mr-2 text-indigo-600"></i> Metodología General
+                                </h4>
+                                <div class="space-y-4">
+                                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                                        <h5 class="font-bold text-indigo-700">Categorización Académica</h5>
+                                        <p class="text-sm text-slate-600 mt-1">Prompts adaptados por nivel educativo y tipo de materia (Ej. Matemáticas, Filosofía, Programación).</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                                        <h5 class="font-bold text-indigo-700">Desarrollo de Habilidades</h5>
+                                        <p class="text-sm text-slate-600 mt-1">Enfoque en potenciar el análisis, la síntesis, la creatividad y la resolución de problemas complejos.</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                                        <h5 class="font-bold text-indigo-700">Beneficios a Largo Plazo</h5>
+                                        <p class="text-sm text-slate-600 mt-1">Mejora en la autonomía de aprendizaje y preparación integral para un futuro laboral exigente.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NUEVA SECCIÓN DE PROMPTS -->
+                    <div class="mb-16 bg-indigo-50/50 rounded-3xl p-8 md:p-12 border border-indigo-100">
+                        <div class="text-center max-w-3xl mx-auto mb-10">
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full font-semibold tracking-wide uppercase">Innovación de Software</span>
+                            <h3 class="mt-4 text-2xl md:text-3xl font-extrabold text-indigo-950">
+                                Catálogo de Prompts Estratégicos
+                            </h3>
+                            <p class="mt-4 text-slate-600 text-lg">
+                                Ejemplos prácticos de cómo estructuramos las instrucciones para que la Inteligencia Artificial actúe como un tutor que estimula tu mente, en lugar de una máquina que hace el trabajo por ti.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Prompt 1 -->
+                            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col h-full">
+                                <div class="bg-amber-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                                    <i data-lucide="alert-triangle" class="h-6 w-6 text-amber-600"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">Prompt de Análisis</h4>
+                                <p class="text-sm text-slate-500 mb-4 flex-grow">Diseñado para ayudar al alumno a desglosar problemas en sus partes fundamentales.</p>
+                                <div class="bg-slate-800 p-4 rounded-xl text-indigo-300 font-mono text-sm leading-relaxed relative mt-auto">
+                                    <div class="absolute -top-3 left-4 bg-indigo-600 text-white text-xs px-2 py-0.5 rounded">Ejemplo</div>
+                                    "Actúa como un profesor socrático. Tengo este problema a resolver, pero <strong class="text-white">NO me des la respuesta final</strong>. En su lugar, hazme 3 preguntas guía para que yo mismo descubra cuál es el error en mi lógica."
+                                </div>
+                            </div>
+
+                            <!-- Prompt 2 -->
+                            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col h-full">
+                                <div class="bg-blue-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                                    <i data-lucide="book-open" class="h-6 w-6 text-blue-600"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">Prompt de Síntesis</h4>
+                                <p class="text-sm text-slate-500 mb-4 flex-grow">Ideal para procesos de lectura, resumen y estructuración de ideas clave.</p>
+                                <div class="bg-slate-800 p-4 rounded-xl text-indigo-300 font-mono text-sm leading-relaxed relative mt-auto">
+                                    <div class="absolute -top-3 left-4 bg-indigo-600 text-white text-xs px-2 py-0.5 rounded">Ejemplo</div>
+                                    "Voy a pegarte mi borrador sobre [Tema]. <strong class="text-white">No lo reescribas ni lo mejores</strong>. Solo dime qué concepto importante del temario omití y dame un recurso o pista para que yo lo investigue y lo agregue."
+                                </div>
+                            </div>
+
+                            <!-- Prompt 3 -->
+                            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col h-full">
+                                <div class="bg-emerald-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                                    <i data-lucide="brain-circuit" class="h-6 w-6 text-emerald-600"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">Prompt de Solución</h4>
+                                <p class="text-sm text-slate-500 mb-4 flex-grow">Fomenta el esfuerzo cognitivo paso a paso para materias prácticas (matemáticas/lógica).</p>
+                                <div class="bg-slate-800 p-4 rounded-xl text-indigo-300 font-mono text-sm leading-relaxed relative mt-auto">
+                                    <div class="absolute -top-3 left-4 bg-indigo-600 text-white text-xs px-2 py-0.5 rounded">Ejemplo</div>
+                                    "Necesito resolver esta ecuación. <strong class="text-white">NO resuelvas la fórmula</strong>. Únicamente revélame cuál debería ser mi primer paso lógico para plantearla y espera a que yo te conteste con mi intento."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Involucrados -->
+                    <div class="bg-slate-900 rounded-2xl p-8 md:p-12 shadow-xl mt-8">
+                        <h4 class="font-bold text-white mb-8 text-2xl text-center flex items-center justify-center">
+                            <i data-lucide="users" class="mr-3 text-indigo-400 h-8 w-8"></i> ¿Quiénes deben involucrarse?
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                                <i data-lucide="graduation-cap" class="h-10 w-10 text-indigo-400 mb-4"></i>
+                                <h5 class="font-bold text-white text-lg">Maestros</h5>
+                                <p class="text-sm text-slate-300 mt-2">Ayudando, orientando y guiando a los alumnos hacia un uso ético de la tecnología.</p>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                                <i data-lucide="book-open" class="h-10 w-10 text-indigo-400 mb-4"></i>
+                                <h5 class="font-bold text-white text-lg">Estudiantes</h5>
+                                <p class="text-sm text-slate-300 mt-2">Creando conciencia y aplicando métodos activos para disminuir la dependencia directa a la IA.</p>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                                <i data-lucide="lightbulb" class="h-10 w-10 text-indigo-400 mb-4"></i>
+                                <h5 class="font-bold text-white text-lg">Académicos</h5>
+                                <p class="text-sm text-slate-300 mt-2">Impartiendo pláticas en prepas y universidades sobre el contexto de cómo la IA afecta cognitivamente a los estudiantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: EQUIPO -->
+        <section id="equipo" class="tab-panel">
+            <div class="py-16 bg-slate-100 min-h-screen">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-extrabold text-slate-900">Conoce al Equipo Monopoli</h2>
+                        <p class="mt-4 text-xl text-slate-600">
+                            El grupo de estudiantes detrás de esta iniciativa.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Miembro 1 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-indigo-600 h-2 w-full"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900">Braulio Rodriguez Estrada</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 mb-4">Investigación y Actualidad</p>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    "Dedicado a la investigación profunda, siempre informado de la actualidad de los temas abordados."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Miembro 2 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-indigo-600 h-2 w-full"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900">Camila Fda. Martínez</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 mb-4">Gestión y Procesos</p>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    "Facilitadora de resultados. Tiene visión para anticipar desafíos y simplificarlos en procesos ágiles."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Miembro 3 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-indigo-600 h-2 w-full"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900">María Fernanda Torres</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 mb-4">Iniciativa y Foco</p>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    "Toma la iniciativa ágilmente. Tiene gran habilidad para concentrarse en los momentos más críticos del proyecto."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Miembro 4 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-indigo-600 h-2 w-full"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900">Karla Naomi González</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 mb-4">Soporte e Investigación</p>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    "Motivada a apoyar siempre al equipo. Destaca por su capacidad de investigar en diversas fuentes confiables."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Miembro 5 -->
+                        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:-translate-y-1 transition-transform duration-300">
+                            <div class="bg-indigo-600 h-2 w-full"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-slate-900">Hilary Alejandra Rodríguez</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 mb-4">Colaboración y Apoyo</p>
+                                <p class="text-slate-600 text-sm leading-relaxed">
+                                    "Se esfuerza constantemente por ayudar a sus compañeros a superar los desafíos técnicos y académicos."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer sin Referencias -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <i data-lucide="brain-circuit" class="h-6 w-6 text-indigo-400"></i>
+                <span class="font-bold text-xl text-white">Equipo Monopoli</span>
+            </div>
+            <p class="text-sm text-slate-300">
+                Centro Universitario de Guadalajara<br/>
+                Universidad de Guadalajara
+            </p>
+            <div class="mt-8 pt-8 border-t border-slate-800 text-sm w-full">
+                <p>&copy; 2026 Proyecto Dependencia a la IA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica de interacciones en JavaScript -->
+    <script>
+        // 1. Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // 2. Lógica para cambiar de pestañas
+        function switchTab(tabId) {
+            // Ocultar todos los paneles
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            // Reiniciar estilos de los botones del menú
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('text-slate-300', 'hover:bg-slate-700', 'hover:text-white');
+            });
+
+            // Mostrar el panel seleccionado
+            document.getElementById(tabId).classList.add('active');
+
+            // Resaltar el botón activo en el menú
+            const activeBtn = document.querySelector(`.nav-btn[data-target="${tabId}"]`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-slate-300', 'hover:bg-slate-700', 'hover:text-white');
+                activeBtn.classList.add('bg-indigo-600', 'text-white');
+            }
+            
+            // Hacer scroll hacia arriba al cambiar de pestaña
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 3. Lógica para el Acordeón en la sección "El Problema"
+        function toggleAccordion(element) {
+            const content = element.querySelector('.accordion-content');
+            const chevron = element.querySelector('.chevron');
+            const isClosed = content.classList.contains('max-h-0');
+
+            // Opcional: Cerrar todos los demás antes de abrir el clickeado
+            const allItems = document.querySelectorAll('.accordion-item');
+            allItems.forEach(item => {
+                const c = item.querySelector('.accordion-content');
+                const ch = item.querySelector('.chevron');
+                // Quitar clases de activo
+                c.classList.remove('max-h-96', 'opacity-100');
+                c.classList.add('max-h-0', 'opacity-0');
+                ch.classList.remove('rotate-90', 'text-indigo-500');
+                item.classList.remove('border-indigo-400', 'ring-1', 'ring-indigo-400', '-translate-y-1');
+                item.classList.add('border-slate-200');
+            });
+
+            // Si estaba cerrado, abrirlo
+            if (isClosed) {
+                content.classList.remove('max-h-0', 'opacity-0');
+                content.classList.add('max-h-96', 'opacity-100');
+                chevron.classList.add('rotate-90', 'text-indigo-500');
+                element.classList.remove('border-slate-200');
+                element.classList.add('border-indigo-400', 'ring-1', 'ring-indigo-400', '-translate-y-1');
+            }
+        }
+    </script>
+</body>
+</html>
